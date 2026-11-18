@@ -1,0 +1,22 @@
+HUJAN POLAROID — foto khusus efek setelah "Make a Wish & Tiup Lilin"
+=====================================================================
+
+Letakkan foto (disarankan rasio 4:5, misal crop 800x1000) di folder ini:
+
+  fall-1.jpg
+  fall-2.jpg
+  fall-3.jpg
+  fall-4.jpg
+  fall-5.jpg
+  fall-6.jpg
+  fall-7.jpg
+  fall-8.jpg
+  fall-9.jpg
+
+Catatan:
+- Foto ini TERPISAH dari foto buku kenangan (assets/photos/photo-*.jpg).
+- Nama file bisa diganti sesuka hati — sesuaikan di js/data.js → FALLING_PHOTOS.
+- Jumlah boleh lebih sedikit dari 9, akan diulang otomatis.
+- Selama belum ada file, yang berjatuhan adalah bingkai polaroid kosong
+  berhias doodle kucing (bukan foto buku kenangan).
+- Pengaturan kecepatan/jumlah → js/data.js → FALLING_CONFIG.

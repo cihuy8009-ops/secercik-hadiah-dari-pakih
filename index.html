@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Buku Kenangan Kita 🐾🌸</title>
+  <meta name="description"
+    content="Buku kenangan digital bergaya scrapbook — kucing lucu, bunga lembut, dan ulang tahun yang manis." />
+  <meta name="theme-color" content="#FDFBF7" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+
+  <!-- ===== Google Fonts: Playfair Display (judul), Inter (body), Caveat (tangan) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- =========================================================
+       SPRITE SVG (doodle kucing, telapak kucing, bunga, ranting)
+       ========================================================= -->
+  <svg class="svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- Telapak kucing -->
+      <symbol id="icon-paw" viewBox="0 0 64 64">
+        <g fill="currentColor">
+          <ellipse cx="32" cy="43" rx="14.5" ry="12" />
+          <ellipse cx="13" cy="27" rx="7" ry="9" transform="rotate(-22 13 27)" />
+          <ellipse cx="25.5" cy="16" rx="7" ry="9.5" transform="rotate(-8 25.5 16)" />
+          <ellipse cx="38.5" cy="16" rx="7" ry="9.5" transform="rotate(8 38.5 16)" />
+          <ellipse cx="51" cy="27" rx="7" ry="9" transform="rotate(22 51 27)" />
+        </g>
+      </symbol>
+
+      <!-- Wajah kucing -->
+      <symbol id="icon-catface" viewBox="0 0 100 90">
+        <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 44 L12 8 L44 26 Q50 22 56 26 L88 8 L82 44 C82 68 68 82 50 82 C32 82 18 68 18 44 Z" />
+          <path d="M32 46 q6 -8 12 0" />
+          <path d="M56 46 q6 -8 12 0" />
+          <path d="M46 56 h8 l-4 5 z" fill="currentColor" stroke="none" />
+          <path d="M50 61 q-5 6 -10 1" />
+          <path d="M50 61 q5 6 10 1" />
+          <path d="M16 52 L3 48" />
+          <path d="M16 59 L4 62" />
+          <path d="M84 52 L97 48" />
+          <path d="M84 59 L96 62" />
+        </g>
+      </symbol>
+
+      <!-- Bunga lima kelopak -->
+      <symbol id="icon-flower" viewBox="0 0 48 48">
+        <g fill="currentColor">
+          <ellipse cx="24" cy="9.5" rx="8" ry="10" />
+          <ellipse cx="24" cy="38.5" rx="8" ry="10" />
+          <ellipse cx="9.5" cy="24" rx="10" ry="8" />
+          <ellipse cx="38.5" cy="24" rx="10" ry="8" />
+          <ellipse cx="13.5" cy="13.5" rx="8" ry="9" transform="rotate(-45 13.5 13.5)" />
+          <ellipse cx="34.5" cy="13.5" rx="8" ry="9" transform="rotate(45 34.5 13.5)" />
+          <ellipse cx="13.5" cy="34.5" rx="8" ry="9" transform="rotate(45 13.5 34.5)" />
+          <ellipse cx="34.5" cy="34.5" rx="8" ry="9" transform="rotate(-45 34.5 34.5)" />
+        </g>
+        <circle cx="24" cy="24" r="7" fill="#E29578" />
+      </symbol>
+
+      <!-- Ranting bunga -->
+      <symbol id="icon-sprig" viewBox="0 0 70 140">
+        <path d="M35 138 C33 104 28 72 40 34" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" />
+        <path d="M32 106 C20 103 13 94 14 83 C25 86 33 95 32 106 Z" fill="#D4E2D4" stroke="currentColor"
+          stroke-width="2.5" stroke-linejoin="round" />
+        <path d="M30 84 C39 79 43 70 41 60 C32 64 27 74 30 84 Z" fill="#D4E2D4" stroke="currentColor" stroke-width="2.5"
+          stroke-linejoin="round" />
+        <path d="M34 62 C24 58 18 49 19 39 C29 42 36 51 34 62 Z" fill="#D4E2D4" stroke="currentColor" stroke-width="2.5"
+          stroke-linejoin="round" />
+        <g transform="translate(40 26)">
+          <circle r="9.5" fill="#E29578" stroke="currentColor" stroke-width="2.5" />
+          <circle r="3.5" fill="#FFFDF9" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Dekorasi latar (bunga & jejak kucing mengambang) -->
+  <div class="bg-decor" aria-hidden="true">
+    <svg class="bg-decor__item bg-decor__item--1">
+      <use href="#icon-sprig" />
+    </svg>
+    <svg class="bg-decor__item bg-decor__item--2">
+      <use href="#icon-paw" />
+    </svg>
+    <svg class="bg-decor__item bg-decor__item--3">
+      <use href="#icon-flower" />
+    </svg>
+    <svg class="bg-decor__item bg-decor__item--4">
+      <use href="#icon-sprig" />
+    </svg>
+    <svg class="bg-decor__item bg-decor__item--5">
+      <use href="#icon-paw" />
+    </svg>
+    <svg class="bg-decor__item bg-decor__item--6">
+      <use href="#icon-flower" />
+    </svg>
+  </div>
+
+  <!-- ===== Lagu latar (path diatur dari js/data.js) ===== -->
+  <audio id="bgm" loop preload="auto"></audio>
+
+  <!-- ===== Floating audio controller (pojok kanan atas) ===== -->
+  <div class="audio-dock" id="audioDock">
+    <span class="vinyl" aria-hidden="true"></span>
+    <button class="dock-btn" id="playBtn" type="button" aria-label="Putar musik" title="Putar musik">
+      <svg viewBox="0 0 24 24" class="ico ico-play" fill="currentColor" aria-hidden="true">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      <svg viewBox="0 0 24 24" class="ico ico-pause" fill="currentColor" aria-hidden="true">
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+      </svg>
+    </button>
+    <button class="dock-btn" id="muteBtn" type="button" aria-label="Bisukan suara" title="Bisukan suara">
+      <svg viewBox="0 0 24 24" class="ico ico-vol" aria-hidden="true">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />
+        <path d="M16 9.2a4 4 0 0 1 0 5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <path d="M18.6 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" />
+      </svg>
+      <svg viewBox="0 0 24 24" class="ico ico-mute" aria-hidden="true">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />
+        <path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+
+  <main id="app">
+    <!-- =========================================================
+         SCENE 1 — COVER / AMPELO
+         ========================================================= -->
+    <section class="scene scene--cover is-active" id="scene-cover" data-scene="1">
+      <div class="cover">
+        <div class="cover__book" id="coverBook" role="button" tabindex="0" aria-label="Buka buku kenangan">
+          <span class="cover__spine" aria-hidden="true"></span>
+          <span class="cover__ribbon" aria-hidden="true"><i class="bow"></i></span>
+
+          <svg class="cover__sprig cover__sprig--tl" aria-hidden="true">
+            <use href="#icon-sprig" />
+          </svg>
+          <svg class="cover__sprig cover__sprig--br" aria-hidden="true">
+            <use href="#icon-sprig" />
+          </svg>
+
+          <div class="cover__front">
+            <p class="cover__kicker">untuk sayangku 🌸</p>
+            <h1 class="cover__title">Buku Kenangan Kita</h1>
+            <p class="cover__hint">kucing, bunga, &amp; cerita kita berdua</p>
+
+            <!-- Doodle kucing memegang setangkai bunga -->
+            <svg class="cover__cat" viewBox="0 0 200 180" role="img" aria-label="Doodle kucing memegang bunga">
+              <g fill="none" stroke="#2D3142" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- ekor -->
+                <path d="M138 152 C172 150 180 122 162 108 C153 101 143 107 146 117" />
+                <!-- telinga (digambar dulu, ditutup lingkaran kepala) -->
+                <path d="M72 42 L64 10 L96 28" fill="#FFFDF9" />
+                <path d="M124 42 L132 10 L100 28" fill="#FFFDF9" />
+                <!-- badan -->
+                <path d="M64 156 C54 116 68 90 98 90 C128 90 144 114 138 156 Z" fill="#FFFDF9" />
+                <!-- kepala -->
+                <circle cx="98" cy="62" r="36" fill="#FFFDF9" />
+                <!-- mata senang & wajah -->
+                <path d="M80 60 q7 -9 14 0" />
+                <path d="M102 60 q7 -9 14 0" />
+                <path d="M94 70 h8 l-4 5 z" fill="#E29578" stroke="none" />
+                <path d="M98 75 q-6 7 -12 1" />
+                <path d="M98 75 q6 7 12 1" />
+                <path d="M64 68 L46 64" />
+                <path d="M64 75 L47 78" />
+                <path d="M132 68 L150 64" />
+                <path d="M132 75 L149 78" />
+                <!-- kaki depan -->
+                <path d="M80 156 q0 -16 11 -20" />
+                <path d="M116 156 q0 -16 -11 -20" />
+                <!-- tangkai bunga -->
+                <path d="M79 140 C62 128 50 110 47 88" stroke="#83A482" />
+                <path d="M58 116 C48 112 43 103 45 94 C54 98 61 107 58 116 Z" fill="#D4E2D4" stroke="#83A482"
+                  stroke-width="3" />
+                <!-- mahkota bunga -->
+                <g transform="translate(47 78)" stroke="#E29578" stroke-width="3" fill="#FCEADE">
+                  <ellipse cx="0" cy="-13" rx="7.5" ry="10.5" />
+                  <ellipse cx="0" cy="-13" rx="7.5" ry="10.5" transform="rotate(72)" />
+                  <ellipse cx="0" cy="-13" rx="7.5" ry="10.5" transform="rotate(144)" />
+                  <ellipse cx="0" cy="-13" rx="7.5" ry="10.5" transform="rotate(216)" />
+                  <ellipse cx="0" cy="-13" rx="7.5" ry="10.5" transform="rotate(288)" />
+                  <circle r="5.5" fill="#E29578" stroke="none" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <button class="btn btn--primary cover__cta" id="openBookBtn" type="button">
+          <svg class="btn__paw" viewBox="0 0 64 64" aria-hidden="true">
+            <use href="#icon-paw" />
+          </svg>
+          Buka Buku Kenangan Kita
+        </button>
+        <p class="cover__note">Tekan tombolnya ya — nanti lagunya ikut menyala 🎵</p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 2 — BUKU KENANGAN (SCRAPBOOK FOTO)
+         ========================================================= -->
+    <section class="scene scene--book" id="scene-book" data-scene="2">
+      <header class="scene__head">
+        <p class="scene__kicker">Halaman kenangan</p>
+        <h2 class="scene__title">Buku Kenangan Kita</h2>
+        <p class="scene__hint">Geser halamannya atau tekan panah ya 🐾</p>
+      </header>
+
+      <div class="book" id="book">
+        <!-- Jejak telapak kucing yang menghubungkan foto -->
+        <div class="paw-trail" aria-hidden="true">
+          <svg class="paw-trail__paw">
+            <use href="#icon-paw" />
+          </svg>
+          <svg class="paw-trail__paw">
+            <use href="#icon-paw" />
+          </svg>
+          <svg class="paw-trail__paw">
+            <use href="#icon-paw" />
+          </svg>
+          <svg class="paw-trail__paw">
+            <use href="#icon-paw" />
+          </svg>
+          <svg class="paw-trail__paw">
+            <use href="#icon-paw" />
+          </svg>
+        </div>
+        <div class="book__spread" id="bookSpread"><!-- halaman dirender oleh js/main.js --></div>
+
+        <!-- kaki kucing yang "membalik" halaman -->
+        <span class="page-paw" id="pagePaw" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <use href="#icon-paw" />
+          </svg>
+        </span>
+      </div>
+
+      <nav class="book__nav" aria-label="Navigasi halaman buku">
+        <button class="nav-btn" id="prevBtn" type="button" aria-label="Halaman sebelumnya">‹</button>
+        <div class="book__dots" id="bookDots"></div>
+        <button class="nav-btn" id="nextBtn" type="button" aria-label="Halaman berikutnya">›</button>
+      </nav>
+      <p class="book__counter" id="bookCounter" aria-live="polite">Halaman 1</p>
+
+      <div class="book__finish" id="bookFinish" hidden>
+        <button class="btn btn--primary" id="toCakeBtn" type="button">
+          Lanjut ke Tiup lilin yuk 🎂
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 3 — KUE & LILIN INTERAKTIF
+         ========================================================= -->
+    <section class="scene scene--cake" id="scene-cake" data-scene="3">
+      <div class="wish">
+        <header class="scene__head">
+          <p class="scene__kicker">Puncak perayaan</p>
+          <h2 class="scene__title">Make a Wish</h2>
+          <p class="scene__hint">Tutup matanya, pikirkan satu harapan… ✨</p>
+        </header>
+
+        <div class="cake-wrap">
+          <svg class="cake" id="cakeSvg" viewBox="0 0 340 320" role="img"
+            aria-label="Kue ulang tahun dengan lilin menyala">
+            <defs>
+              <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFF3C4" />
+                <stop offset="0.55" stop-color="#FFD27A" />
+                <stop offset="1" stop-color="#F0A35E" />
+              </linearGradient>
+            </defs>
+
+            <!-- piring -->
+            <ellipse cx="170" cy="286" rx="140" ry="18" fill="#D4E2D4" stroke="#2D3142" stroke-width="3" />
+            <ellipse cx="170" cy="283" rx="118" ry="12" fill="#E5EDE5" />
+
+            <!-- tier bawah (peach) -->
+            <rect x="60" y="200" width="220" height="74" rx="12" fill="#FCEADE" stroke="#2D3142" stroke-width="3" />
+            <!-- krim tier bawah -->
+            <path d="M56 200 Q56 186 70 186 H270 Q284 186 284 200 V206
+                 a14.25 14.25 0 0 1 -28.5 0 a14.25 14.25 0 0 1 -28.5 0
+                 a14.25 14.25 0 0 1 -28.5 0 a14.25 14.25 0 0 1 -28.5 0
+                 a14.25 14.25 0 0 1 -28.5 0 a14.25 14.25 0 0 1 -28.5 0
+                 a14.25 14.25 0 0 1 -28.5 0 a14.25 14.25 0 0 1 -28.5 0 Z" fill="#FFFDF9" stroke="#2D3142"
+              stroke-width="3" stroke-linejoin="round" />
+
+            <!-- tier atas (matcha/sage) -->
+            <rect x="102" y="112" width="136" height="84" rx="10" fill="#D4E2D4" stroke="#2D3142" stroke-width="3" />
+            <!-- krim tier atas -->
+            <path d="M96 122 Q96 108 110 108 H232 Q246 108 246 122 V126
+                 a15 15 0 0 1 -30 0 a15 15 0 0 1 -30 0 a15 15 0 0 1 -30 0
+                 a15 15 0 0 1 -30 0 a15 15 0 0 1 -30 0 Z" fill="#FFFDF9" stroke="#2D3142" stroke-width="3"
+              stroke-linejoin="round" />
+
+            <!-- sprinkles & bunga krim -->
+            <g stroke="#2D3142" stroke-width="2">
+              <rect x="78" y="236" width="12" height="5" rx="2.5" fill="#E29578" transform="rotate(-24 84 238)" />
+              <rect x="126" y="252" width="12" height="5" rx="2.5" fill="#83A482" transform="rotate(18 132 254)" />
+              <rect x="212" y="230" width="12" height="5" rx="2.5" fill="#E29578" transform="rotate(-12 218 232)" />
+              <rect x="244" y="252" width="12" height="5" rx="2.5" fill="#83A482" transform="rotate(28 250 254)" />
+              <rect x="118" y="158" width="11" height="4.5" rx="2.2" fill="#E29578" transform="rotate(20 123 160)" />
+              <rect x="204" y="146" width="11" height="4.5" rx="2.2" fill="#E29578" transform="rotate(-22 209 148)" />
+            </g>
+
+            <g color="#FFFDF9">
+              <g transform="translate(96 216) scale(0.9)">
+                <use href="#icon-flower" width="48" height="48" />
+              </g>
+              <g transform="translate(238 244) scale(0.8)">
+                <use href="#icon-flower" width="48" height="48" />
+              </g>
+              <g transform="translate(150 246) scale(0.72)">
+                <use href="#icon-flower" width="48" height="48" />
+              </g>
+              <g transform="translate(126 128) scale(0.8)">
+                <use href="#icon-flower" width="48" height="48" />
+              </g>
+              <g transform="translate(196 168) scale(0.72)">
+                <use href="#icon-flower" width="48" height="48" />
+              </g>
+            </g>
+
+            <!-- lilin -->
+            <g class="candle">
+              <rect x="160" y="54" width="20" height="60" rx="5" fill="#FFFDF9" stroke="#2D3142" stroke-width="3" />
+              <path d="M163 56 h5 v56 h-5 z M173 56 h4 v56 h-4 z" fill="#E29578" opacity="0.9" />
+              <line x1="170" y1="56" x2="170" y2="46" stroke="#2D3142" stroke-width="3" stroke-linecap="round" />
+            </g>
+
+            <!-- asap (muncul setelah tiup) -->
+            <g class="smoke" aria-hidden="true">
+              <circle class="puff puff--1" cx="170" cy="46" r="6" fill="#B9BECB" />
+              <circle class="puff puff--2" cx="163" cy="46" r="5" fill="#C6CAD4" />
+              <circle class="puff puff--3" cx="177" cy="46" r="4.5" fill="#C6CAD4" />
+            </g>
+
+            <!-- api lilin -->
+            <g class="flame-group" aria-hidden="true">
+              <circle class="flame-glow" cx="170" cy="32" r="27" fill="#FFE9B8" opacity="0.4" />
+              <path class="flame" d="M170 10 C182 27 184 38 176 44 C172 47 166 47 162 44 C156 38 158 26 170 10 Z"
+                fill="url(#flameGrad)" />
+            </g>
+          </svg>
+        </div>
+
+        <button class="btn btn--primary wish__btn" id="wishBtn" type="button">
+          🕯️ Make a Wish &amp; Tiup Lilin
+        </button>
+
+        <p class="wish__message" id="wishMessage" hidden></p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 4 — SURAT CINTA
+         ========================================================= -->
+    <section class="scene scene--letter" id="scene-letter" data-scene="4">
+      <div class="letter-scene">
+        <header class="scene__head">
+          <p class="scene__kicker">Secarik kertas untukmu</p>
+          <h2 class="scene__title">Surat Kecil Sebuah Hati</h2>
+        </header>
+
+        <div class="letter-wrap">
+          <article class="letter" id="letter">
+            <span class="letter__stamp" aria-hidden="true">
+              <svg viewBox="0 0 100 90">
+                <use href="#icon-catface" />
+              </svg>
+            </span>
+            <span class="letter__postmark" aria-hidden="true">with&nbsp;love</span>
+
+            <div class="letter__body" id="letterBody"><!-- dirender dari js/data.js --></div>
+
+            <span class="letter__paws" aria-hidden="true">
+              <svg>
+                <use href="#icon-paw" />
+              </svg>
+              <svg>
+                <use href="#icon-paw" />
+              </svg>
+              <svg>
+                <use href="#icon-paw" />
+              </svg>
+            </span>
+
+            <span class="wax-seal" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <use href="#icon-paw" />
+              </svg>
+            </span>
+          </article>
+        </div>
+
+        <div class="letter__footer">
+          <button class="btn btn--ghost" id="restartBtn" type="button">↻ Baca lagi dari awal</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Layer hujan polaroid (diisi otomatis setelah lilin ditiup) -->
+  <div class="falling-layer" aria-hidden="true"></div>
+
+  <noscript>
+    <p style="text-align:center; font-family:sans-serif; padding:40px 20px;">
+      Maaf, website ini butuh JavaScript agar interaktif. Please enable JavaScript ya 🐾
+    </p>
+  </noscript>
+
+  <!-- ===== Library confetti (kelopak bunga) ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
